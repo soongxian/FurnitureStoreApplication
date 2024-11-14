@@ -8,9 +8,6 @@ namespace FurnitureStore.Data.DTOs
 {
     public class FurnitureCategoryDto
     {
-        public class FurnitureCategoryGetOnlyCategoryNameDto
-        {
-            public string FurnitureCategoryName { get; set; }
-        }
+
     }
 }

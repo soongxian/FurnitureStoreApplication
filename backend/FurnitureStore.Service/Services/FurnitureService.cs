@@ -19,9 +19,9 @@ namespace FurnitureStore.BusinessLayer.Services
             _furnitureRepository = furnitureRepository;
         }
 
-        public Task<Furniture> AddFurniture(Furniture furniture)
+        public async Task<FurnitureCreateDto> AddFurniture(FurnitureCreateDto furnitureCreateDto)
         {
-            throw new NotImplementedException();
+            return await _furnitureRepository.AddFurniture(furnitureCreateDto);
         }
 
         public Task<bool> DeleteFurniture(int id)

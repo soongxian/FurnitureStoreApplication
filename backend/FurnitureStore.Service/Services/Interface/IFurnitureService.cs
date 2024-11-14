@@ -12,7 +12,7 @@ namespace FurnitureStore.BusinessLayer.Services.Interface
     {
         public Task<List<FurnitureGetDto>> GetAllFurnitures();
         public Task<List<FurnitureGetDto>> GetFurnitureByName(string name);
-        public Task<Furniture> AddFurniture(Furniture furniture);
+        public Task<FurnitureCreateDto> AddFurniture(FurnitureCreateDto furnitureCreateDto);
         public Task<Furniture> EditFurniture(int id, Furniture furniture);
         public Task<bool> DeleteFurniture(int id);
     }

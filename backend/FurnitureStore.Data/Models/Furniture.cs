@@ -10,9 +10,13 @@ namespace FurnitureStore.Data.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public FurnitureBrand FurnitureBrand { get; set; }
-        public FurnitureCategory FurnitureCategory { get; set; }
         public double Price { get; set; }
         public double Quantity { get; set; }
+        public int FurnitureBrandId { get; set; }
+        public int FurnitureCategoryId { get; set; }
+
+
+        public FurnitureBrand FurnitureBrand { get; set; }
+        public FurnitureCategory FurnitureCategory { get; set; }
     }
 }

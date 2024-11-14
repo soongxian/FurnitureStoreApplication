@@ -364,3 +364,4 @@ FodyWeavers.xsd
 backend/FurnitureStore.Data/Migrations/20241112133724_InitialMigration.cs
 backend/FurnitureStore.Data/Migrations/20241112133724_InitialMigration.Designer.cs
 backend/FurnitureStore.Data/Migrations/FurnitureStoreDbContextModelSnapshot.cs
+/backend/FurnitureStore.Data/Migrations

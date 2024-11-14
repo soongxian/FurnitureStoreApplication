@@ -22,9 +22,22 @@ namespace FurnitureStore.DataLayer.Repositories
             _dbContext = dbContext;
         }
 
-        public Task<Furniture> AddFurniture(Furniture furniture)
+        public async Task<FurnitureCreateDto> AddFurniture(FurnitureCreateDto furniture)
         {
-            throw new NotImplementedException();
+
+            var furnitureMapping = new Furniture
+            {
+                Name = furniture.Name,
+                Quantity = furniture.Quantity,
+                Price = furniture.Price,
+                FurnitureBrandId = furniture.FurnitureBrandId,
+                FurnitureCategoryId = furniture.FurnitureCategoryId
+            };
+
+            _dbContext.Furnitures.Add(furnitureMapping);
+            await _dbContext.SaveChangesAsync();
+
+            return furniture;
         }
 
         public Task<bool> DeleteFurniture(int id)
@@ -49,14 +62,8 @@ namespace FurnitureStore.DataLayer.Repositories
                     Name = f.Name,
                     Quantity = f.Quantity,
                     Price = f.Price,
-                    FurnitureBrand = new FurnitureBrandGetOnlyBrandNameDto
-                    {
-                        FurnitureBrandName = f.FurnitureBrand.BrandName
-                    },
-                    FurnitureCategory = new FurnitureCategoryGetOnlyCategoryNameDto
-                    {
-                        FurnitureCategoryName = f.FurnitureCategory.FurnitureCategoryName
-                    }
+                    FurnitureBrandName = f.FurnitureBrand.FurnitureBrandName,
+                    FurnitureCategoryName = f.FurnitureCategory.FurnitureCategoryName                
                 }).ToListAsync();
 
             return furnitures;
@@ -75,14 +82,8 @@ namespace FurnitureStore.DataLayer.Repositories
                     Name = f.Name,
                     Quantity = f.Quantity,
                     Price = f.Price,
-                    FurnitureBrand = new FurnitureBrandGetOnlyBrandNameDto
-                    {
-                        FurnitureBrandName = f.FurnitureBrand.BrandName
-                    },
-                    FurnitureCategory = new FurnitureCategoryGetOnlyCategoryNameDto
-                    {
-                        FurnitureCategoryName = f.FurnitureCategory.FurnitureCategoryName
-                    }
+                    FurnitureBrandName = f.FurnitureBrand.FurnitureBrandName,
+                    FurnitureCategoryName = f.FurnitureCategory.FurnitureCategoryName
                 }).ToListAsync();
 
             return furnitures;

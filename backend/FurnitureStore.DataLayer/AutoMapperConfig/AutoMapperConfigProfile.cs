@@ -15,21 +15,8 @@ namespace FurnitureStore.DataLayer.AutoMapperConfig
     {
         public AutoMapperConfigProfile()
         {
-            CreateMap<Furniture, FurnitureGetDto>()
-            .ForMember(dest => dest.FurnitureBrand, opt => opt.MapFrom(src => new FurnitureBrandGetOnlyBrandNameDto
-            {
-                FurnitureBrandName = src.FurnitureBrand.BrandName
-            }))
-            .ForMember(dest => dest.FurnitureCategory, opt => opt.MapFrom(src => new FurnitureCategoryGetOnlyCategoryNameDto
-            {
-                FurnitureCategoryName = src.FurnitureCategory.FurnitureCategoryName
-            }));
-
-            CreateMap<FurnitureBrand, FurnitureBrandGetOnlyBrandNameDto>()
-                .ForMember(dest => dest.FurnitureBrandName, opt => opt.MapFrom(src => src.BrandName));
-
-            CreateMap<FurnitureCategory, FurnitureCategoryGetOnlyCategoryNameDto>()
-                .ForMember(dest => dest.FurnitureCategoryName, opt => opt.MapFrom(src => src.FurnitureCategoryName));
+            CreateMap<Furniture, FurnitureGetDto>();
+            CreateMap<FurnitureCreateDto, Furniture>();
         }
     }
 }

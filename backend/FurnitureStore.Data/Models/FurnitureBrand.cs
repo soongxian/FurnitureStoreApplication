@@ -9,7 +9,7 @@ namespace FurnitureStore.Data.Models
     public class FurnitureBrand
     {
         public int Id { get; set; }
-        public string BrandName { get; set; }
+        public string FurnitureBrandName { get; set; }
         public List<Furniture> Furnitures { get; set; }
     }
 }

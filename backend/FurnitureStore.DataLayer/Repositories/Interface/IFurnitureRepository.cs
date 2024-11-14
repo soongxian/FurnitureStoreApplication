@@ -11,7 +11,7 @@ namespace FurnitureStore.DataLayer.Repositories.Interface
     public interface IFurnitureRepository
     {
         public Task<List<FurnitureGetDto>> GetAllFurnitures();
-        public Task<Furniture> AddFurniture(Furniture furniture);
+        public Task<FurnitureCreateDto> AddFurniture(FurnitureCreateDto furniture);
         public Task<List<FurnitureGetDto>> GetFurnitureByName(string name);
         public Task<Furniture> EditFurniture(int id, Furniture furniture);
         public Task<bool> DeleteFurniture(int id);

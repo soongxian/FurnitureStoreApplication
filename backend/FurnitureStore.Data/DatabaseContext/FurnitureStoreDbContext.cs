@@ -14,7 +14,7 @@ namespace FurnitureStore.Data.DatabaseContext
 
         public DbSet<Furniture> Furnitures { get; set; }
         public DbSet<FurnitureBrand> FurnitureBrands { get; set; }
-        public DbSet<FurnitureCategory> FurnitureCategory { get; set; }
+        public DbSet<FurnitureCategory> FurnitureCategories { get; set; }
 
     }
 }

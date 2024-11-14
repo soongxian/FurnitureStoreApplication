@@ -35,5 +35,15 @@ namespace FurnitureStore.API.Controllers
             var mapperFurnitures = _mapper.Map<List<FurnitureGetDto>>(furnitures);
             return Ok(mapperFurnitures);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<FurnitureCreateDto>> AddFurniture(FurnitureCreateDto furnitureCreateDto)
+        {
+            var furniture = _mapper.Map<FurnitureCreateDto>(furnitureCreateDto);
+            var addedFurniture = await _furnitureService.AddFurniture(furniture);
+
+            return Ok(addedFurniture);
+        }
+
     }
 }
