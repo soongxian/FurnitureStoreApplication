@@ -14,6 +14,8 @@ namespace FurnitureStore.Data.Models
         public double Quantity { get; set; }
         public int FurnitureBrandId { get; set; }
         public int FurnitureCategoryId { get; set; }
+        public string FurnitureDescription { get; set; }
+        public string FurnitureImage { get; set; }
 
 
         public FurnitureBrand FurnitureBrand { get; set; }

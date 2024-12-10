@@ -19,6 +19,8 @@ namespace FurnitureStore.Data.DTOs
             public double Quantity { get; set; }
             public string FurnitureBrandName { get; set; }
             public string FurnitureCategoryName { get; set; }
+            public string FurnitureDescription { get; set; }
+            public string FurnitureImage { get; set; }
         }
 
         public class FurnitureCreateDto
@@ -28,6 +30,8 @@ namespace FurnitureStore.Data.DTOs
             public int FurnitureCategoryId { get; set; }
             public double Price { get; set; }
             public double Quantity { get; set; }
+            public string FurnitureDescription { get; set; }
+            public string FurnitureImage { get; set; }
         }
 
     }
